@@ -7,15 +7,11 @@ app.use(express())
 
 const corsOptions = {
     origin: 'https://zomato-vishal-sarvaiya.vercel.app', // Replace with your Vercel app's URL
-    // methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    // credentials: true, 
-    // Include cookies in cross-origin requests if needed
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true, // Include cookies in cross-origin requests if needed
 };
 
-// app.use(cors(corsOptions));
-app.use(cors({
-origin: 'https://zomato-vishal-sarvaiya.vercel.app'
-}))
+app.use(cors(corsOptions));
 app.use(express.json())
 
 
@@ -76,3 +72,20 @@ app.listen(8000, () => {
 //        { "src": "/(.*)", "dest": "/server.js" }
 //     ]
 //  }
+
+// {
+//     "version": 2,
+//     "builds": [
+//         {
+//           "src": "/server.js",
+//           "use": "@vercel/node"
+//         }
+//     ],
+//     "routes":[
+//        {
+//           "src" : "/(.*)",
+//           "dest" : "/"
+//        }
+//     ]
+//  }
+  
