@@ -1,24 +1,29 @@
 
 
- {
+{
    "version": 2,
-   "name": "zomato-vishal-sarvaiya",
    "builds": [
-     {
-       "src": "./server.js",
-       "use": "@vercel/node"
-     }
-   ],
-   "routes": [
-     {
-       "src": "/(.*)",
-       "dest": "./server.js",
-       "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
-       "headers": {
-         "Access-Control-Allow-Origin": "*"
+       {
+           "src": "./index.py",
+           "use": "@vercel/python"
        }
-     }
+   ],
+   "rewrites": [
+       { "source": "/(.*)", "destination": "src/app.js" }
+   ],
+   "headers": [
+       {
+         "source": "/(.*)",
+         "headers": [
+           { "key": "Access-Control-Allow-Origin", "value": "*" }
+         ]
+       },
+       {
+         "source": "/vercel_app_domain_name/(.*)",
+         "headers": [
+           { "key": "Access-Control-Allow-Origin", "value": "*" }
+         ]
+       }  
    ]
- }
- 
+}
  
