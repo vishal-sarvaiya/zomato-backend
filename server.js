@@ -11,7 +11,7 @@ const corsOptions = {
     credentials: true, // Include cookies in cross-origin requests if needed
 };
 
-app.use(cors(corsOptions));
+app.use(cors())
 app.use(express.json())
 
 
