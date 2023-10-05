@@ -14,6 +14,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json())
 
+
 // {
 //     "origin": "*",
 //     "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
