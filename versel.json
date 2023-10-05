@@ -3,9 +3,9 @@
 {
    "version": 2,
    "builds": [
+      
        {
-         "src": "/*",
-         "dest": "/app/routes/City/cityroute.js",
+         "src": "/server.js",
          "use": "@vercel/node"
        }
    ],
