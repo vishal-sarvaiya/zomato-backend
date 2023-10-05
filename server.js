@@ -4,9 +4,24 @@ const mongoose =require("mongoose")
 const app = express()
 const path = require("path")
 app.use(express())
-app.use(cors())
+// app.use(cors())
 app.use(express.json())
+app.use(cors(
+    {
+        origin: ["*"],
+        methods: ["GET","HEAD","PUT","PATCH","POST","DELETE"],
+        credentials: true,
+        optionsSuccessStatus: 204
+    }
+))
 
+
+// {
+//     "origin": "*",
+//     "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+//     "preflightContinue": false,
+//     "optionsSuccessStatus": 204
+//   }
 
 require('dotenv').config();
 
