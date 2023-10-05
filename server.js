@@ -4,16 +4,8 @@ const mongoose =require("mongoose")
 const app = express()
 const path = require("path")
 app.use(express())
-// app.use(cors())
+app.use(cors())
 app.use(express.json())
-app.use(cors(
-    {
-        origin: ["https://zomato-backend-six.vercel.app/"],
-        methods: ["GET","HEAD","PUT","PATCH","POST","DELETE"],
-        credentials: true,
-        optionsSuccessStatus: 204
-    }
-))
 
 
 // {
@@ -61,3 +53,15 @@ mongoose
 app.listen(8000,()=>{
     console.log("App is Listening on Port 8000");
 })
+
+
+// {
+//     "version": 2,
+//     "name": "zomato-vishal-sarvaiya",
+//     "builds": [
+//        { "src": "app.js", "use": "@vercel/node" }
+//     ],
+//     "routes": [
+//        { "src": "/(.*)", "dest": "/server.js" }
+//     ]
+//  }
