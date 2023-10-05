@@ -4,9 +4,14 @@ const mongoose =require("mongoose")
 const app = express()
 const path = require("path")
 app.use(express())
-app.use(cors())
+// app.use(cors())
 app.use(express.json())
 
+app.use(cors({
+    origin: ["https://zomato-backend-six.vercel.app/"],
+    methods: ["POST", "GET", "PUT", "DELETE", "PATCH"],
+    credentials : true
+}))
 
 // {
 //     "origin": "*",
