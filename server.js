@@ -8,7 +8,7 @@ app.use(express())
 app.use(express.json())
 app.use(cors(
     {
-        origin: ["*"],
+        origin: ["https://zomato-backend-six.vercel.app/"],
         methods: ["GET","HEAD","PUT","PATCH","POST","DELETE"],
         credentials: true,
         optionsSuccessStatus: 204
