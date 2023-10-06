@@ -15,13 +15,6 @@ app.use(cors(corsOptions))
 app.use(express.json())
 
 
-// {
-//     "origin": "*",
-//     "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-//     "preflightContinue": false,
-//     "optionsSuccessStatus": 204
-//   }
-
 require('dotenv').config();
 
 const userRoute = require("./app/routes/User/userRoutes")
