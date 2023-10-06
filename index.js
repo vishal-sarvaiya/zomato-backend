@@ -5,8 +5,9 @@ const app = express()
 const path = require("path")
 app.use(express())
 
+app.use('/uploads', express.static('/Users/technomac40/zomato-clone/zomato-clone-development/backend/app/uploads'));
 
-  const allowedOrigin = (origin, callback) => {
+const allowedOrigin = (origin, callback) => {
     if (
       origin &&
       origin.startsWith('https://zomato-vishal-sarvaiya.vercel.app')
