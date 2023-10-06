@@ -1,5 +1,5 @@
 const jwt = require("jsonwebtoken")
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcryptjs")
 const { restaurant } = require("../../models/Restaurant/restaurantModel")
 const { order } = require("../../models/Order/orderModel");
 const { ObjectId } = require("mongodb");
