@@ -174,6 +174,10 @@ module.exports.getRestaurant = async (req, res) => {
             // Sort in descending order, adjust for ascending if needed
             return scoreB - scoreA;
         });
+        res.setHeader('Content-Type', 'text/html');
+        res.setHeader('Content-Type', 'image/jpeg');
+        res.setHeader('Content-Type', 'image/png');
+        res.setHeader('Content-Type', 'image/avif');
         res.status(200).send(d)
     }
     catch (err) {
