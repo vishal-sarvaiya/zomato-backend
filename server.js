@@ -64,34 +64,21 @@ app.listen(8000, () => {
     console.log("App is Listening on Port 8000");
 })
 
-
 // {
 //     "version": 2,
-//     "name": "zomato-vishal-sarvaiya",
 //     "builds": [
-//        { "src": "app.js", "use": "@vercel/node" }
+//       {
+//         "src": "./server.js",
+//         "use": "@vercel/node"
+//       }
 //     ],
 //     "routes": [
-//        { "src": "/(.*)", "dest": "/server.js" }
+  
+//       {
+//         "src": "/app/routes/*/(.*)",
+//         "dest": "/app/routes/User/userRoute.js"
+//       }
 //     ]
-//  }
-
-// {
-//     "version": 2,
-//     "builds": [
-//         {
-//           "src": "/server.js",
-//           "use": "@vercel/node"
-//         }
-//     ],
-//     "routes":[
-//        {
-//           "src" : "/(.*)",
-//           "dest" : "/"
-//        }
-//     ]
-//  }
-
-// "src": "/(.*)",
-
+//   }
+  
   
