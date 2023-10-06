@@ -5,18 +5,28 @@ const app = express()
 const path = require("path")
 app.use(express())
 
-const allowedOrigin = (origin, callback) => {
-    if (origin && origin.startsWith('https://zomato-vishal-sarvaiya.vercel.app')) {
+
+  const allowedOrigin = (origin, callback) => {
+    if (
+      origin &&
+      origin.startsWith('https://zomato-vishal-sarvaiya.vercel.app')
+    ) {
       callback(null, true); // Allow requests from the specified origin
     } else {
-      callback(new Error('Access Not Allowed By CORS')); // Deny requests from other origins
+      callback(new Error('Not allowed by CORS')); // Deny requests from other origins
     }
   };
-
-  const corsOptions = {
-    origin: allowedOrigin,
-  };
   
+
+//   const corsOptions = {
+//     origin: allowedOrigin,
+//   };
+  
+  const corsOptions = {
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+  };
 // const corsOptions = {
 //     origin: /^https:\/\/zomato-vishal-sarvaiya\.vercel\.app/,
 //     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
