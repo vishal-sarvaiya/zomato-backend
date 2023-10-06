@@ -6,7 +6,7 @@ const path = require("path")
 app.use(express())
 
 const corsOptions = {
-    origin: 'https://zomato-vishal-sarvaiya.vercel.app', // Replace with your Vercel app's URL
+    origin: '', // Replace with your Vercel app's URL
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
     credentials: true, // Include cookies in cross-origin requests if needed
 };
