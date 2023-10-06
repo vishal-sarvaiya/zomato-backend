@@ -74,9 +74,9 @@ mongoose
         console.log("mongodb connection Error:", error);
     })
 
-    app.use("/",(req,res)=>{
-        res.send("server is running")
-    })
+    // app.use("/",(req,res)=>{
+    //     res.send("server is running")
+    // })
 app.listen(8000, () => {
     console.log("App is Listening on Port 8000");
 })
