@@ -15,11 +15,15 @@ const Auth = require("../../middlewares/Auth")
 // })
 // const upload = multer({storage : storage})
 
-router.post("/addfood",Auth(['restaurant']),upload.single('image'),addFood)
+//using Image Upload
+// router.post("/addfood",Auth(['restaurant']),upload.single('image'),addFood)
+// router.put("/updatefood",Auth(['restaurant']),upload.single('image'),updateFood)
+
+router.post("/addfood",Auth(['restaurant']),addFood)
+router.put("/updatefood",Auth(['restaurant']),updateFood)
 router.get("/getfood/",Auth(['user','restaurant']),getFood)
 router.get("/getallfood",Auth(['restaurant','user']),getAllFood)
 router.delete("/deletefood/:id",Auth(['restaurant']),deleteFood)
-router.put("/updatefood",Auth(['restaurant']),upload.single('image'),updateFood)
 
 
 module.exports = router

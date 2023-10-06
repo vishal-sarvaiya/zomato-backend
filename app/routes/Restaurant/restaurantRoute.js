@@ -15,17 +15,19 @@ const path = require("path")
 // })
 // const upload = multer({ storage: storage })
 
-// router.post("/restaurantregister",upload.single('menu_image'),restaurantregister)
-// router.post("/restaurantregister" ,[upload2.single('menu_image'), upload.array('restaurant_images',4)], restaurantregister)
-router.post("/restaurantregister",
-    upload.fields([{
-        name: 'menu_image',
-        maxCount: 1
-    }, {
-        name: 'restaurant_images',
-        maxCount: 4
-    }]),
-    restaurantregister)
+
+//******************************UNCOMMENT WHEN UPLODADING IMAGE******************
+// router.post("/restaurantregister",
+//     upload.fields([{
+//         name: 'menu_image',
+//         maxCount: 1
+//     }, {
+//         name: 'restaurant_images',
+//         maxCount: 4
+//     }]),
+//     restaurantregister)
+
+router.post("/restaurantregister",restaurantregister)
 
 router.post("/restaurantlogin", restaurantlogin)
 router.get("/getrestaurant", Auth(['user','restaurant']), getRestaurant)

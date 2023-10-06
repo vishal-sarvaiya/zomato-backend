@@ -45,7 +45,7 @@ app.use(cityRoute)
 const questionRoute = require("./app/routes/Question/questionRoute")
 app.use(questionRoute)
 
-app.use('/app/uploads', express.static('app/uploads'))
+// app.use('/app/uploads', express.static('app/uploads'))
 
 mongoose
     // .connect("mongodb://localhost:27017/Zomato")

@@ -8,15 +8,15 @@ module.exports.addFood = async (req, res) => {
     // console.log("reqfiles",req.file);
     const { name, price, category, details, restaurantId, quantity } = req.body
     const file = req.file
-    if (!req.file.fieldname) {
-        res.status(400).json({ message: "No file uploaded" });
-    }
+    // if (!req.file.fieldname) {
+    //     res.status(400).json({ message: "No file uploaded" });
+    // }
 
     // console.log("filename");
-    const imagePath = `app/uploads/${file.filename}`
+    const imagePath = `app/uploads/${file?.filename}`
     try {
         const foodData = new food({
-            image: imagePath,
+            image: imagePath ? imagePath : "Image Not Added",
             name: name,
             price: JSON.parse(price),
             category: category,

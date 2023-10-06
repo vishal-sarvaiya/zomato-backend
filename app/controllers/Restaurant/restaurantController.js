@@ -20,19 +20,19 @@ module.exports.restaurantregister = async (req, res) => {
         category
     } = req.body;
 
-    if (!req.files) {
-        res.status(400).json({ message: "No file uploaded" });
-    }
+    // if (!req.files) {
+    //     res.status(400).json({ message: "No file uploaded" });
+    // }
     const saltRounds = 10;
 
     const files = req.files
     console.log(files);
 
     const imageFolderPath = "app/uploads";
-    const menuImagePath = `app/uploads/${files.menu_image[0].filename}`
+    const menuImagePath = `app/uploads/${files?.menu_image[0]?.filename}`
     let imagePath = []
     for (let i of files.restaurant_images) {
-        imagePath.push(`${imageFolderPath}/${i.filename}`)
+        imagePath.push(`${imageFolderPath}/${i?.filename}`)
     }
 
     const restaurantExist = await restaurant.findOne({
@@ -51,7 +51,7 @@ module.exports.restaurantregister = async (req, res) => {
                 email: email,
                 password: encryptedPassword,
                 phoneno: JSON.parse(phoneno),
-                restaurant_images: imagePath,
+                restaurant_images: imagePath ? imagePath : "No Image Uploaded",
                 menu_image: menuImagePath,
                 city: city,
                 pincode: JSON.parse(pincode),
