@@ -7,6 +7,7 @@ app.use(express())
 
 app.use('/uploads', express.static('/Users/technomac40/zomato-clone/zomato-clone-development/backend/app/uploads'));
 
+app.use(express.static('public'));
 const allowedOrigin = (origin, callback) => {
     if (
       origin &&
@@ -62,7 +63,7 @@ app.use(cityRoute)
 const questionRoute = require("./app/routes/Question/questionRoute")
 app.use(questionRoute)
 
-app.use(express.static('public'));
+
 
 mongoose
     // .connect("mongodb://localhost:27017/Zomato")
