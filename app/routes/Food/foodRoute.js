@@ -19,6 +19,8 @@ const Auth = require("../../middlewares/Auth")
 // router.post("/addfood",Auth(['restaurant']),upload.single('image'),addFood)
 // router.put("/updatefood",Auth(['restaurant']),upload.single('image'),updateFood)
 
+
+
 router.post("/addfood",Auth(['restaurant']),addFood)
 router.put("/updatefood",Auth(['restaurant']),updateFood)
 router.get("/getfood/",Auth(['user','restaurant']),getFood)

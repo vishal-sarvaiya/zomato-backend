@@ -2,8 +2,12 @@ const { food } = require("../../models/Food/foodItemModel")
 const fs = require("fs")
 const { restaurant } = require("../../models/Restaurant/restaurantModel")
 const { ObjectId } = require("mongodb")
+const { put } = require("@vercel/blob")
 
 module.exports.addFood = async (req, res) => {
+
+   const blob = await put("demofilename",req.file,{access:'public'})
+   console.log("blob in addfood",blob)
     // console.log("reqbody",req.body);
     // console.log("reqfiles",req.file);
     const { name, price, category, details, restaurantId, quantity } = req.body
