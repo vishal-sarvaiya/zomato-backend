@@ -38,8 +38,6 @@ const allowedOrigin = (origin, callback) => {
 
 app.use(cors(corsOptions))
 app.use(express.json())
-
-
 require('dotenv').config();
 
 const userRoute = require("./app/routes/User/userRoutes")
